@@ -124,7 +124,4 @@ class AdminController extends Controller
     }
     
     }
-    public function checkAdmin(){
-        return ['isAdmin'=>Auth::user()->is_admin];
-    }
 }

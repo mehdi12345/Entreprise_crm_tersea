@@ -39,7 +39,6 @@ Route::group([
     Route::post('/updatePassword', 'AdminController@updatePassword'); //same as above
     Route::post('/getAllAdmin', 'AdminController@getAllAdmin');
     Route::post('/addAdmin', 'AdminController@addAdmin');
-    Route::post('/checkAdmin', 'AdminController@checkAdmin');
     Route::post('/getAllEmployee', 'EmployeeController@getAllEmployee');
     Route::post('/getEmployee', 'EmployeeController@getEmployee');
 });
