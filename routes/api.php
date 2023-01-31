@@ -54,6 +54,7 @@ Route::group([
     Route::post('/company/delete/{id}', 'CompanyController@delete');
     Route::post('/invite', 'CompanyController@invite');
     Route::post('/getCompany', 'CompanyController@getCompany');
+    Route::post('/SearchCompany', 'CompanyController@SearchCompany');
 });
 Route::group([
 	'namespace'  => '\App\Http\Controllers\Invitation',

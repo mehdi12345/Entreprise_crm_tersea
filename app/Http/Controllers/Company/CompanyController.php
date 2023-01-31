@@ -108,7 +108,7 @@ catch(Exception $e){
             return response()->json($response, 200);
         }else{
             $response = [
-                'message' => 'Company not deleted',
+                'message' => "Company can't be deleted because employees are working in it!",
             ];
             return response()->json($response, 404);
         }
@@ -119,7 +119,7 @@ catch(Exception $e){
         Gate::authorize('access',Auth::user());
         $request->validate([
             'email' => 'required|unique:users|max:255',
-            'nom'  => 'required|string|max:255|alpha_dash',
+            'nom'  => 'required|string|max:255',
         ]);
         try{
         $user = User::create([
@@ -160,5 +160,11 @@ catch(Exception $e){
 
         $company = Auth::user()->company;
         return response($company, 200);
+    }
+    public function SearchCompany(Request $request){
+
+        Gate::authorize('access',Auth::user());
+        $companies = Company::where('name', 'LIKE', '%'.$request->name.'%')->get();
+        return response($companies, 200);
     }
 }

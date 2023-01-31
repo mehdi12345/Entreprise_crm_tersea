@@ -23,6 +23,7 @@ class InvitationController extends Controller
                 'employee_phone'=>$invitation->employee?$invitation->employee->phone:'',
                 'employee_address'=>$invitation->employee?$invitation->employee->address:'',
                 'status'=>$invitation->status,
+                'user_status'=>$invitation->employee?$invitation->employee->verified:'',
                 'company_name'=>$invitation->company?$invitation->company->name:'',
             ];
         });
