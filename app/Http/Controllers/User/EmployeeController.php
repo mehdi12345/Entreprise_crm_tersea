@@ -56,6 +56,7 @@ class EmployeeController extends Controller
         ]);
         try{
             $user=User::findOrFail($id);
+            if($user->invitation!=null){
             if($user->verified!=1){
                 
         $user->update([
@@ -78,6 +79,12 @@ class EmployeeController extends Controller
                     'message' => 'Employee Already verified',
                 ];
                 return response()->json($response, 404); 
+            }
+        }else{
+                $response = [
+                    'message' => 'Invitation is Not Active',
+                ];
+                return response()->json($response, 404);
             }
         }catch(Exception $e){
             $response = [
