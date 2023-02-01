@@ -38,6 +38,8 @@ $ php artisan serve
 
 ## Build Setup for Front-end
 
+github Link : https://github.com/mehdi12345/Entreprise_crm_tersea_ui
+
 ```bash
 # 1- Clone this project to the folder you want, by running the command below : 
 $ git clone https://github.com/mehdi12345/Entreprise_crm_tersea_ui.git
@@ -51,4 +53,9 @@ $ npm install
 
 # 4- serve with hot reload at localhost:3000
 $ npm run dev
+
+# 4- open the link localhost:3000. A login page will appear in your screen :
+email : admin@tersea.com
+password : adminIsHere123            // I and H are uppercase
+After you enter those information, congrat you are log in as an administrator.
 ```
